@@ -4,7 +4,7 @@ module.exports = {
   filenameHashing: false,
   pages: {
     popup: {
-      entry: './src/popup/main.js',
+      entry: './src/views/popup/main.js',
       filename: './pages/popup.html',
       title: 'popup'
     }

@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Pie from '../components/Pie'
+import Pie from '../../components/Pie'
 
 export default {
   data () {
