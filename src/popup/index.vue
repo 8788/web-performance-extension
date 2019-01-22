@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    popup
+    <Pie :performance="performance"></Pie>
   </div>
 </template>
 
 <script>
-import timing from '../utils/timing.js'
+import Pie from '../components/Pie'
 
 export default {
   data () {
@@ -13,12 +13,15 @@ export default {
       performance: {}
     }
   },
+  components: {
+    Pie
+  },
   created () {
     const that = this
     window.addEventListener('load', function load (event) {
       window.removeEventListener('load', load, false)
       chrome.tabs.executeScript({ file: 'js/execute.js' }, arr => {
-        that.performance = timing(arr[0])
+        that.performance = arr[0]
       })
     }, false)
   }
@@ -26,4 +29,7 @@ export default {
 </script>
 
 <style>
+  #app {
+    width: 400px;
+  }
 </style>

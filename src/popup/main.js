@@ -1,8 +1,11 @@
 import Vue from 'vue'
 import App from './index.vue'
-import '../img/128.png'
+import '../assets/128.png'
+import VCharts from 'v-charts'
 
 Vue.config.productionTip = false
+
+Vue.use(VCharts)
 
 new Vue({
   render: h => h(App)
