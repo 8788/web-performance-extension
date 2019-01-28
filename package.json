@@ -9,7 +9,9 @@
   "dependencies": {
     "vue": "^2.5.21",
     "echarts": "^4.2.0-rc.2",
-    "v-charts": "^1.19.0"
+    "v-charts": "^1.19.0",
+    "@antv/data-set": "^0.10.1",
+    "viser-vue": "^2.4.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.3.0",

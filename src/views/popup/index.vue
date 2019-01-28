@@ -1,10 +1,12 @@
 <template>
   <div id="app">
+    <Bar :performance="performance"></Bar>
     <Pie :performance="performance"></Pie>
   </div>
 </template>
 
 <script>
+import Bar from '../../components/Bar'
 import Pie from '../../components/Pie'
 
 export default {
@@ -14,6 +16,7 @@ export default {
     }
   },
   components: {
+    Bar,
     Pie
   },
   created () {
@@ -30,6 +33,6 @@ export default {
 
 <style>
   #app {
-    width: 400px;
+    width: 480px;
   }
 </style>
