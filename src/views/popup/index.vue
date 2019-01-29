@@ -1,13 +1,11 @@
 <template>
   <div id="app">
     <Bar :performance="performance"></Bar>
-    <Pie :performance="performance"></Pie>
   </div>
 </template>
 
 <script>
 import Bar from '../../components/Bar'
-import Pie from '../../components/Pie'
 
 export default {
   data () {
@@ -16,8 +14,7 @@ export default {
     }
   },
   components: {
-    Bar,
-    Pie
+    Bar
   },
   created () {
     const that = this

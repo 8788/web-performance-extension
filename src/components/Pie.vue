@@ -29,7 +29,7 @@ export default {
       },
       labelConfig: ['percent', {
         formatter: (val, item) => {
-          return item.point.item + ': ' + val
+          return item.point.item + ': ' + item.point.time
         }
       }]
     }
@@ -47,6 +47,7 @@ export default {
       obj.points.forEach(item => {
         sourceData.push({
           item: item,
+          time: obj.times[item],
           count: parseInt((obj.times[item] / obj.times.totalTime * 100).toFixed(0), 10)
         })
       })
