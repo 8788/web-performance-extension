@@ -1,4 +1,4 @@
-# web-performance
+# web-performance-extension
 
 ## Screenshot
 

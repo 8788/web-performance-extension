@@ -5,6 +5,7 @@
     <v-legend />
     <v-axis dataKey="profession" :label="label" />
     <v-bar position="profession*range" />
+    <v-interval position="profession*range" label="time" />
   </v-chart>
 </template>
 
