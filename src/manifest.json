@@ -11,6 +11,6 @@
     "default_popup": "pages/popup.html"
   },
   "permissions": [
-    "<all_urls>"
+    "activeTab"
   ]
 }
