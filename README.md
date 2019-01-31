@@ -1,5 +1,7 @@
 # web-performance-extension
 
+[![chrome webstore](https://developer.chrome.com/webstore/images/ChromeWebStore_BadgeWBorder_v2_206x58.png)](https://chrome.google.com/webstore/detail/web-performance/akpccppkhjkefnhhphcejlgobihombma)
+
 ## Screenshot
 
 ![popup](./src/assets/popup.png)
