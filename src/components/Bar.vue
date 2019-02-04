@@ -1,11 +1,11 @@
 <template>
   <v-chart :forceFit="true" :padding="padding" :height="height" :data="data">
-    <v-coord type="rect" direction="LB" />
-    <v-tooltip />
-    <v-legend />
-    <v-axis dataKey="profession" :label="label" />
-    <v-bar position="profession*range" />
-    <v-interval position="profession*range" label="time" />
+    <v-coord type="rect" direction="LB"></v-coord>
+    <v-tooltip dataKey="profession"></v-tooltip>
+    <v-legend></v-legend>
+    <v-axis dataKey="profession" :label="label"></v-axis>
+    <v-bar position="profession*range"></v-bar>
+    <v-interval position="profession*range" label="time"></v-interval>
   </v-chart>
 </template>
 
