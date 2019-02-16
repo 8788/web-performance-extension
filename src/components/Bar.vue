@@ -1,11 +1,10 @@
 <template>
   <v-chart :forceFit="true" :padding="padding" :height="height" :data="data">
     <v-coord type="rect" direction="LB"></v-coord>
-    <v-tooltip dataKey="profession"></v-tooltip>
+    <v-tooltip :showTitle="false"></v-tooltip>
     <v-legend></v-legend>
-    <v-axis dataKey="profession" :label="label"></v-axis>
-    <v-bar position="profession*range"></v-bar>
-    <v-interval position="profession*range" label="time"></v-interval>
+    <v-axis dataKey="profession"></v-axis>
+    <v-interval position="profession*range" label="time" :color="color" :tooltip="tooltip"></v-interval>
   </v-chart>
 </template>
 
@@ -18,8 +17,14 @@ export default {
     return {
       data: [],
       height: 300,
-      label: { offset: 12 },
-      padding: [20, 80, 20, 80]
+      padding: [20, 80, 20, 80],
+      color: ['fill', fill => fill],
+      tooltip: ['profession*range', (profession, range) => {
+        return {
+          name: profession,
+          value: range.join('-')
+        }
+      }]
     }
   },
   props: ['performance'],
@@ -39,7 +44,8 @@ export default {
           profession: item,
           time: obj.times[item],
           start: start,
-          end: end
+          end: end,
+          fill: obj.fills[item]
         })
       })
 
@@ -48,7 +54,8 @@ export default {
         profession: 'total',
         time: obj.times.total,
         start: 0,
-        end: obj.times.total
+        end: obj.times.total,
+        fill: obj.fills.total
       })
 
       console.log(sourceData, obj)

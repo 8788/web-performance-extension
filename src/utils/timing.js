@@ -15,6 +15,18 @@ export default function (performance) {
       total: ['navigationStart', 'loadEventEnd'],
       unload: ['unloadEventStart', 'unloadEventEnd']
     },
+    fills: {
+      redirect: '#ffff60',
+      appCache: '#1f831f',
+      DNS: '#1f7c83',
+      TCP: '#e58226',
+      request: '#1fe11f',
+      response: '#1977cc',
+      processing: '#9cc',
+      onload: '#c0c0ff',
+      total: '#188fff',
+      unload: '#cdcdcd'
+    },
     times: {},
     descs: {}
   }
