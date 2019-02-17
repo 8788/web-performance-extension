@@ -34,7 +34,7 @@ export default function (performance) {
   for (let point in result.calcs) {
     const calc = result.calcs[point]
     result.times[point] = timing[calc[1]] - timing[calc[0]]
-    result.descs[point] = `performance.timing.${calc[1]} - performance.timing.${calc[0]}`
+    result.descs[point] = `${calc[1]} - ${calc[0]}`
   }
 
   console.log(result)

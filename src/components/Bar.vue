@@ -5,6 +5,7 @@
     <v-legend></v-legend>
     <v-axis dataKey="profession"></v-axis>
     <v-interval position="profession*range" label="time" :color="color" :tooltip="tooltip"></v-interval>
+    <v-bar position="profession*range" :color="color" :tooltip="desctip"></v-bar>
   </v-chart>
 </template>
 
@@ -19,10 +20,16 @@ export default {
       height: 300,
       padding: [20, 80, 20, 80],
       color: ['fill', fill => fill],
-      tooltip: ['profession*range', (profession, range) => {
+      tooltip: ['profession*time*range', (profession, time, range) => {
         return {
           name: profession,
-          value: range.join('-')
+          value: `${time} (${range.join(' - ')})`
+        }
+      }],
+      desctip: ['profession*desc', (profession, desc) => {
+        return {
+          name: 'calc',
+          value: desc
         }
       }]
     }
@@ -45,7 +52,8 @@ export default {
           time: obj.times[item],
           start: start,
           end: end,
-          fill: obj.fills[item]
+          fill: obj.fills[item],
+          desc: obj.descs[item]
         })
       })
 
@@ -55,7 +63,8 @@ export default {
         time: obj.times.total,
         start: 0,
         end: obj.times.total,
-        fill: obj.fills.total
+        fill: obj.fills.total,
+        desc: obj.descs.total
       })
 
       console.log(sourceData, obj)
