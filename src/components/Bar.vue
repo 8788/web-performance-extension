@@ -4,7 +4,7 @@
     <v-tooltip :showTitle="false"></v-tooltip>
     <v-legend></v-legend>
     <v-axis dataKey="profession"></v-axis>
-    <v-interval position="profession*range" label="time" :color="color" :tooltip="tooltip"></v-interval>
+    <v-interval position="profession*range" :label="label" :color="color" :tooltip="tooltip"></v-interval>
     <v-bar position="profession*range" :color="color" :tooltip="desctip"></v-bar>
   </v-chart>
 </template>
@@ -20,10 +20,11 @@ export default {
       height: 300,
       padding: [20, 80, 20, 80],
       color: ['fill', fill => fill],
+      label: ['time', time => time + 'ms'],
       tooltip: ['profession*time*range', (profession, time, range) => {
         return {
           name: profession,
-          value: `${time} (${range.join(' - ')})`
+          value: `${time}ms (${range.join(' - ')})`
         }
       }],
       desctip: ['profession*desc', (profession, desc) => {
