@@ -6,6 +6,10 @@
 
 ![popup](./src/assets/popup.png)
 
+## Performance API Details
+
+![performance](./src/assets/performance.svg)
+
 ## Calc
 
 ```javascript
